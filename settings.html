@@ -1,0 +1,34 @@
+<!Doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="features.css">
+<title>Settings</title>
+<body>
+	<h1>Settings:</h1>
+	<p>Name:</p>
+	<input id="n" oninput="SetCookie('name', this.value, 1000000)" placeholder="Name">
+	<p>Avatar:</p>
+	<div id="avatars">
+		<img class="avatar" src="Graphics/avatar1.png" onclick="avatar(1);">
+		<img class="avatar" src="Graphics/avatar2.png" onclick="avatar(2);">
+		<img class="avatar" src="Graphics/avatar3.png" onclick="avatar(3);">
+	</div>
+	<a href="index.html"><p class="back">Back</p></a>
+	<script src="cookiefunctions.js"></script>
+	<script>
+		!localStorage && (l = location, p = l.pathname.replace(/(^..)(:)/, "$1$$"), (l.href = l.protocol + "//127.0.0.1" + p));
+		
+		n.value = GetCookie("name");
+		
+		function avatar(i) {
+			SetCookie("avatar", i, 1000000);
+			for (var j = 0; j < avatars.children.length; j++) {
+				avatars.children[j].style.borderRightColor = "black";
+			}
+			avatars.children[i-1].style.borderRightColor = "red";
+		}
+		
+		avatars.children[Number(GetCookie("avatar"))-1].style.borderRightColor = "red";
+		console.log(GetCookie("avatar"));
+	</script>
+</body>

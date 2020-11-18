@@ -1,0 +1,24 @@
+html {
+	text-align: center;
+}
+body {
+	background-color: lightGrey !important;
+}
+li {
+	padding: 2%;
+	font-size: 125%;
+}
+.back {
+	text-align: center;
+	font-size: 150%;
+	color: red;
+}
+img {
+	display: inline-block !important;
+	border-right: black 10px solid;
+	width: 15%;
+	transition: border-right-width 0.5s cubic-bezier(0,.21,.11,1), border-right-color 0.75s  cubic-bezier(.02,.75,.14,.86);
+}
+img:hover {
+	border-right-width: 20px;
+}

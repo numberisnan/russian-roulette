@@ -1,0 +1,70 @@
+<!doctype HTML>
+<title>Russian Roulette</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="page.css">
+
+<body>
+	<div id="gameFrame">
+		<div id="turnCounter">1</div>
+	
+		<img id="enemyAvatar" class="avatar">
+		<img id="enemyGun" class="gun" src="Graphics/gun3.png">
+		<div id="enemyname" class="name"></div>
+		
+		<img id="userAvatar" class="avatar">
+		<img id="userGun" class="gun" src="Graphics/gun1.png">
+		<div id="username" class="name"></div>
+		
+		<div id="gameMessage" class="static"></div>
+		<div id="textContainer"></div>
+	</div>
+
+	<div id="popup">
+	</div>
+	
+	<div id="backdrop" class="fullscreen">
+		<div id="askBox">
+			<p id="q"></p>
+			<input id="answer">
+			<button id="finishButton" done="false">Done</button>
+		</div>
+	</div>
+	
+	<div id="gameLogo" class="fullscreen">
+		<img id="logo" src="Graphics/logo.png">
+	</div>
+	
+	<div id="menu" class="fullscreen">
+		<table>
+			<tr>
+				<th>Kills</th>
+				<td id="k"></td>
+			</tr>
+			<tr>
+				<th>Deaths</th>
+				<td id="d"></td>
+			</tr>
+			<tr>
+				<th>K/D</th>
+				<td id="kd"></td>
+			</tr>
+			<tr>
+				<th>Boss Kills</th>
+				<td id="bossk"></td>
+			</tr>
+		</table>
+	
+		<img src="Graphics/gun1.png">
+		<img src="Graphics/gun1.png">
+		<h1>Russian Roulette Game</h1>
+		<ul>
+			<li onclick="game.menu.close(); game.startup();">Start Game</li>
+			<a href="settings.html"><li>Settings</li></a>
+			<a href="instructions.html"><li>Instructions</li></a>
+		</ul>
+	</div>
+	
+	<script src="cookiefunctions.js"></script>
+	<script src="animations.js"></script>
+	<script src="page.js"></script>
+</body>

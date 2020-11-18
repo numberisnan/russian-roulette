@@ -1,0 +1,278 @@
+@keyframes slideout {
+	0% {top: 0;}
+	75% {top: 0;}
+	100% {top: 100%;}
+}
+@keyframes turn {
+	0% {transform: rotate(0deg); width: 7%;}
+	50% {width: 12%;}
+	70% {transform: rotate(170deg);}
+	100% {transform: rotate(360deg); width: 7%;}
+}
+@keyframes upanddown {
+	0% {margin-top: 2px;}
+	50% {margin-top: 0;}
+	100% {margin-top: 2px;}
+}
+@keyframes flash {
+	0% {background-color: rgba(256, 0, 0, 0.8);}
+	50% {background-color: yellow;}
+	100% {background-color: rgba(256, 0, 0, 0.8);}
+}
+@keyframes popup {
+0% {top: -15%; opacity: 0; left: 33%; right: 33%;}
+20% {top: 5%; opacity: 0.9; left: 28%; right: 28%;}
+80% {top: 5%; opacity: 0.9; left: 28%; right: 28%;}
+100%{top: -15%; opacity: 0; left: 33%; right: 33%;}
+}
+html {
+	font-family: monospace;
+	font-size: 20px;
+}
+body {
+	background-color: gray;
+}
+a {
+	color: black;
+}
+#gameFrame :not(.static) {
+	position: absolute;
+}
+#gameFrame {
+	position: fixed;
+	top: 8%;
+	bottom: 8%;
+	right: 10%;
+	left: 10%;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 30px;
+	-ms-user-select: none;
+	cursor: url("Graphics/gun.cur"), auto;
+}
+#username {
+	left: 23%;
+	width: 19%;
+	bottom: 12%;
+	text-align: center;
+	border-radius: 10px;
+}
+#userAvatar {
+	width: 15%;
+	bottom: 19%;
+	left: 25%;
+}
+#textContainer {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 0 0 30px 30px;
+	background-color: rgb(100, 100, 100);
+	height: 9%;
+	font-size: 35px;
+	text-align: center;
+}
+#enemyAvatar {
+	bottom: 57%;
+	right: 20%;
+	width: 12%;
+}
+#enemyname {
+	right: 18%;
+	width: 16%;
+	bottom: 50%;
+}
+.name {
+	background-color: rgba(255, 0, 0, 0.65);
+	position: absolute;
+	text-align: center;
+	border-radius: 10px;
+}
+#backdrop {
+	background-color: rgba(0, 0, 0, 0.75);
+	display: none;
+	transition: opacity 1s;
+}
+#askBox {
+	position: fixed;
+	top: 20%;
+	bottom: 40%;
+	left: 20%;
+	right: 20%;
+	background-color: rgba(255, 0, 0, 1);
+	border-radius: 25px;
+	padding: auto;
+}
+#askBox input {
+	border: none;
+	background-color: lightGrey;
+	font-size: 20px;
+	border-radius: 10px;
+	height: 10%;
+	cursor: pointer;
+	margin-left: 25%;
+	padding-left: 5px;
+	width: 30%;
+}
+#askBox p {
+	text-align: center;
+	font-size: 30px;
+}
+#askBox button {
+	height: 10%;
+	width: 10%;
+	margin-left: 5%;
+	border: none;
+	background-color: grey;
+	border-radius: 10px;
+}
+.avatar {
+	display: none;
+	cursor: url("Graphics/pointer.ani"), auto;
+}
+#gameLogo {
+	z-index: 3;
+	position: fixed;
+	top: 100%;
+	heigth: 100%;
+	left: 0;
+	right: 0;
+	background-color: rgb(192, 192, 192);
+	animation: slideout 4s ease-out;
+}
+#logo {
+	width: 30%;
+	margin: 7% auto 75% 35%;
+}
+.gun {
+	display: none;
+}
+#userGun {
+	width: 8%;
+	bottom: 20%;
+	left: 37%;
+}
+#enemyGun {
+	width: 6.7%;
+	bottom: 54%;
+	right: 15%;
+}
+#turnCounter {
+	border-radius: 30px 0 30px 0;
+	top: 0;
+	left: 0;
+	width: 9%;
+	height: 10%;
+	background-color: rgba(256, 0, 0, 0.8);
+	text-align: center;
+	padding-top: 3%;
+	font-size: 30px;
+	color: white;
+	display: none;
+}
+.flash {
+	animation-name: flash;
+	animation-duration: 0.75s;
+}
+#gameMessage {
+	font-size: 3cm;
+	text-align: center;
+}
+.msgimg {
+	width: 40%;
+}
+.fullscreen {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#menu {
+	background-color: lightGrey;
+	text-align: center;
+}
+#menu .turn {
+	animation-name: turn;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+h1 {
+	font-size: 2cm;
+}
+h1, li {
+	max-width: 60%;
+	margin: 2px auto;
+}
+.upanddown {
+	animation-name: upanddown;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+#menu img:nth-child(2)  {
+	position: fixed;
+	top: 5%;
+	left: 10%;
+	width: 7%;
+}
+#menu img:nth-child(3) {
+	position: fixed;
+	top: 5%;
+	right: 10%;
+	width: 7%;
+}
+#menu ul {
+	list-style-type: none;
+	max-width: 70%;
+	margin: 2% auto;
+	font-size: 1.5cm;
+}
+#menu li {
+	padding: 2%;
+	max-width: 50%;
+	text-decoration: none;
+	cursor: pointer;
+}
+li:active {
+	text-decoration: underline;
+}
+#menu li:hover {
+	list-style-image: url('Graphics/gunicon.png');
+	color: red;
+}
+#popup {
+	padding: 1%;
+	border: grey solid 2px;
+	position: fixed; 
+	border-radius: 8px;
+	background-color: white;
+	right: 25%;
+	left: 25%;
+	top: -20%;
+	opacity: 0;
+	z-index: 5;
+	text-align: center;
+}
+.popup {
+	animation-name: popup;
+	animation-duration: 6s;
+	animation-timing-function: ease-in-out;
+}
+table, th, td {
+	border: 1px solid black;
+}
+td, th {
+	padding: 3px 15px;
+	background-color: rgba(256, 0, 0, 0.15);
+}
+table {
+	position: fixed;
+	top: 40%;
+	left: 2%;
+}
+a {
+	text-decoration: none;
+}
+/*Notes:
+- Use @media to make sure screen size is not too small
+*/
